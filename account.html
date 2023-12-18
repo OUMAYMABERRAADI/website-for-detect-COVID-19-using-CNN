@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\style.css">
+    <link rel="icon" type="img/png" href="{{ url_for('static', filename='logo.png') }}" >
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <title>Login Page</title>
+</head>
+<body>
+	<div class="container">
+		<div>
+		<div class="drop">
+			<div class="content">
+				<img src="{{ url_for('static', filename='logo2.png') }}" id="icon">
+				<h2>Sign Up</h2>
+				<form  method="POST">
+          <div class="inputBox">
+                     <input type="text" placeholder="Enter Username" id="username"  name="username" required>
+                   </div>
+				   <div class="inputBox">
+                     <input type="text" placeholder="Enter Email" id="email"  name="email" required>
+                   </div>
+                   <div class="inputBox">
+                      <input type="password" placeholder="Enter Password" id="password" name="password" required>
+                   </div>
+                   <div class="inputBox">
+                        <input type="submit" style="color: #fff" value="Sign Up">
+                   </div>
+                   
+                </form>
+                <div class="login-card-footer">
+                       <a href="{{ url_for('login') }}" style=" color:rgba(14, 58, 94, 0.866);">Sign In</a>
+                 </div>
+		</div>
+		</div>
+		<br /><br /><br /><br /><br /><br /><br /><br />
+			<div class="date">
+                    &copy; <em id="date"></em>CREATED BY OUMAYMA BERRAADI - IKRAM LEFHAL LALAOUI
+            </div>
+       </div>
+	</div>
+	  <script>
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function() 
+    {
+      document.body.classList.toggle("dark-theme");
+      if(document.body.classList.contains("dark-theme")){
+        icon.src ="{{ url_for('static', filename='sun.png') }}";
+      }else{
+        icon.src = "{{ url_for('static', filename='moon.png') }}";
+      }
+    }
+  </script>
+</body>
+</html>

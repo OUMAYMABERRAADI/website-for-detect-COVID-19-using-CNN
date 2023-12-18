@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Page Home!</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> 
+  <link rel="icon" type="img/png" href="{{ url_for('static', filename='logo_covid19.png') }}" >
+</head>
+
+<body>
+
+<div id="maintext" style="position:absolute; margin:auto; width:700px; height:200px; text-align:center; top:0; bottom: 0; left: 0; right: 0;"> 
+  <h1 class="text-light mb-2" align="center" style="color:white;"> Welcome,</h1>
+  <h3 class="text-light mb-5" align="center" style="color:white;">Please Upload your X-ray image for detect COVID-19</h3> 
+  <h4  class="text-light mb-5" align="center" style="color:white;">And waite a minute</h4>
+
+
+  <form method="POST" enctype=multipart/form-data>
+     <p class="text-light">
+        <input type=file name=file>
+        <input type=submit value=Upload>
+     </p>
+  </form>
+</div>
+</body>
+</html>
